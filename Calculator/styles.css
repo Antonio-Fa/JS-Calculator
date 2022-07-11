@@ -9,6 +9,10 @@ body {
   align-items: center;
 }
 
+#upperDisplay:empty:before {
+  content: "0";
+}
+
 #calcBody {
   width: 550px;
   height: 700px;
@@ -23,7 +27,18 @@ body {
   border-radius: 10px;
 }
 
+@font-face {
+  font-family: digitalFace;
+  src: url(../digital-7.ttf);
+}
 #screen {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  font-size: 3rem;
+  font-family: digitalFace;
   width: 400px;
   height: 80px;
   margin-bottom: 40px;
@@ -36,6 +51,12 @@ body {
   height: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.inputs__btn:hover {
+  background: rgb(193, 121, 0) 100%;
+}
+.inputs__btn:active {
+  background: rgb(255, 215, 147) 0%;
 }
 .inputs__btn {
   width: 80%;

@@ -9,6 +9,10 @@ body {
     align-items: center;
 }
 
+#upperDisplay:empty:before {
+    content: "0";
+}
+
 #calcBody {
     width: 550px;
     height: 700px;
@@ -18,12 +22,30 @@ body {
     flex-direction: column;
     margin-top: 100px;
     padding-top: 50px;
-    background: rgb(255,199,141);
-    background: linear-gradient(90deg, rgba(255,199,141,1) 0%, rgba(255,143,48,1) 5%, rgba(255,143,48,1) 95%, rgba(191,92,8,1) 100%);
+    background: rgb(255, 199, 141);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 199, 141, 1) 0%,
+        rgba(255, 143, 48, 1) 5%,
+        rgba(255, 143, 48, 1) 95%,
+        rgba(191, 92, 8, 1) 100%
+    );
     border-radius: 10px;
 }
 
+@font-face {
+    font-family: digitalFace;
+    src: url(../digital-7.ttf);
+}
+
 #screen {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 3rem;
+    font-family: digitalFace;
     width: 400px;
     height: 80px;
     margin-bottom: 40px;
@@ -37,6 +59,14 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
+    &__btn:hover {
+        background: rgba(193, 121, 0, 1) 100%;
+    }
+
+    &__btn:active {
+        background: rgba(255, 215, 147, 1) 0%;
+    }
+
     &__btn {
         width: 80%;
         height: 80%;
@@ -44,8 +74,14 @@ body {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
         color: white;
-        background: rgb(255,215,147);
-        background: linear-gradient(112deg, rgba(255,215,147,1) 0%, rgba(255,178,48,1) 29%, rgba(255,178,48,1) 90%, rgba(193,121,0,1) 100%);
+        background: rgb(255, 215, 147);
+        background: linear-gradient(
+            112deg,
+            rgba(255, 215, 147, 1) 0%,
+            rgba(255, 178, 48, 1) 29%,
+            rgba(255, 178, 48, 1) 90%,
+            rgba(193, 121, 0, 1) 100%
+        );
         border-radius: 60px;
         border: 1px black solid;
 
@@ -55,4 +91,3 @@ body {
         }
     }
 }
-
