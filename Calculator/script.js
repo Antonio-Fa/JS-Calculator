@@ -5,6 +5,12 @@ class Calculator {
         this.clear();
     }
 
+    clear() {
+        this.currentDisplay = "";
+        this.previousDisplay = "";
+        this.operator = undefined;
+    }
+
     writeNumber(number) {
         // Checks if the next input is a decimal and if there is already a decimal in the string
         if (number === "." && `${this.currentDisplay}`.includes(".")) {
@@ -15,6 +21,9 @@ class Calculator {
     }
 
     selectOperator(operator) {
+        if (this.currentDisplay === "") {
+            return;
+        }
         this.operator = operator;
         this.previousDisplay = `${this.currentDisplay}` + `${operator}`;
         this.currentDisplay = "";
@@ -40,18 +49,15 @@ class Calculator {
             case "*":
                 result = prevNum * currentNum;
                 break;
+            case "^":
+                result = prevNum ** currentNum;
+                break;
             default:
                 return;
         }
         this.currentDisplay = result;
         this.operator = undefined;
         this.previousDisplay = "";
-    }
-
-    clear() {
-        this.currentDisplay = "";
-        this.previousDisplay = "";
-        this.operator = undefined;
     }
 
     updateDisplay() {
