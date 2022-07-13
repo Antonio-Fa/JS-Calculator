@@ -70,7 +70,6 @@ const numberButtons = document.querySelectorAll("button.number");
 const operatorButtons = document.querySelectorAll("button.operator");
 const equalsButton = document.querySelector("#equals");
 const clearButton = document.querySelector("#clear");
-const powerButton = document.querySelector("#powerOn");
 const lowerDisplay = document.querySelector("#lowerDisplay");
 const upperDisplay = document.querySelector("#upperDisplay");
 
