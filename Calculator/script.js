@@ -20,12 +20,12 @@ class Calculator {
         this.currentDisplay = `${this.currentDisplay}` + `${number}`;
     }
 
-    selectOperator(operator) {
+    selectOperator(oper) {
         if (this.currentDisplay === "") {
             return;
         }
-        this.operator = operator;
-        this.previousDisplay = `${this.currentDisplay}` + `${operator}`;
+        this.operator = oper;
+        this.previousDisplay = `${this.currentDisplay}` + `${oper}`;
         this.currentDisplay = "";
     }
 
